@@ -41,7 +41,8 @@ function generarNumero(numMax){
     let numeroGenerado = Math.floor(Math.random() * numMax) + 1;
     if(numeroSorteados.length >= numeroMaximo){
         asignarTextoElemento('h1', "Juego Finalizado");
-        asignarTextoElemento('p', "ya se han sorteado todos los numeros");
+        asignarTextoElemento('p', "ya se han sorteado todos los numeros, recarga la pagina");
+        document.querySelector('#inputNum').setAttribute('disabled', 'true');
     }else{
         if(numeroSorteados.includes(numeroGenerado)){
             return generarNumero(numMax);
